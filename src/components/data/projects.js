@@ -33,12 +33,15 @@ export const projects = [
       '/projects/skillhive-4-profile.jpg',
       '/projects/skillhive-6-job-management.jpg',
     ],
-    links: { code: 'https://github.com/your-username/skill-hive', live: null },
+    links: { code: 'https://github.com/JavariaMuqdas/Skill_hive_frontend', live: null },
+    links: {
+      code: "https://github.com/JavariaMuqdas/Skill_hive_backend", live: null
+    }
   },
   {
     id: 'trustlocal',
     tag: 'In Development',
-    title: 'TrustLocal',
+    title: 'Sahih',
     status: 'in-development',
     tagline: 'Trust scores, not star ratings.',
     blurb:
@@ -77,7 +80,7 @@ export const projects = [
       'Deployed to shared hosting to practice a real production handoff',
     ],
     images: ['/projects/vendo-1-home.jpg', '/projects/vendo-2-product.jpg'],
-    links: { code: 'https://github.com/your-username/vendo', live: null },
+    links: { code: 'https://github.com/JavariaMuqdas/vendo_website', live: null },
   },
   {
     id: 'passx',
@@ -98,7 +101,7 @@ export const projects = [
       'Practiced relational CRUD fundamentals against MySQL',
     ],
     images: ['/projects/passx-modern-mockup.svg'],
-    links: { code: 'https://github.com/your-username/password-manager', live: null },
+    links: { code: 'https://github.com/JavariaMuqdas/passX', live: null },
   },
   {
     id: 'portfolio-site',
@@ -123,7 +126,7 @@ export const projects = [
       '/projects/portfolio-2-work.jpg',
       '/projects/portfolio-3-skills.jpg',
     ],
-    links: { code: 'https://github.com/your-username/portfolio', live: null },
+    links: { code: 'https://github.com/JavariaMuqdas/portfolio',  },
   },
 ]
 
