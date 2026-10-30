@@ -9,7 +9,6 @@ export const projects = [
     id: 'skill-hive',
     tag: 'Final Year Project',
     title: 'Skill Hive',
-    status: 'shipped',
     tagline: 'Skill-based hiring, not resume spam.',
     blurb:
       'A hiring and internship platform that matches students to real opportunities by actual skill fit, not by who applies fastest.',
@@ -34,9 +33,38 @@ export const projects = [
       '/projects/skillhive-6-job-management.jpg',
     ],
     links: { code: 'https://github.com/JavariaMuqdas/Skill_hive_frontend', live: null },
-    links: {
-      code: "https://github.com/JavariaMuqdas/Skill_hive_backend", live: null
-    }
+  },
+  {
+    id: 'squadboard',
+    tag: 'Full-Stack SaaS',
+    title: 'SquadBoard',
+    status: 'shipped',
+    tagline: 'Group projects, with proof of who did what.',
+    blurb:
+      'A task board for student teams that splits the work, tracks deadlines, and turns real board activity into a fair contribution report for supervisors.',
+    description: [
+      "Every group project has the same problem: one or two people carry the work, everyone shares the grade, and on viva day the supervisor has no way to tell who actually did what. WhatsApp groups and shared docs don't fix it — they just scatter the evidence.",
+      'SquadBoard gives each team a Kanban board where the leader splits the project into tasks with owners, effort points and deadlines. Members move their own tasks and post progress notes and proof links; only the leader or supervisor can approve a task as Done, so nobody can mark their own work complete.',
+      "Every change is written to an append-only activity log, and the contribution report is computed from that log — not self-reported: 60% share of approved effort points, 20% on-time delivery, 20% activity. Supervisors get read-only access to the board, the report and a printable PDF, so they can grade individuals instead of just the group.",
+    ],
+    stack: ['React', 'Laravel 11', 'MySQL', 'Sanctum', 'Tailwind CSS', 'Framer Motion', 'dnd-kit'],
+    highlights: [
+      'Drag-and-drop Kanban with a review → approve workflow; members can only move their own tasks',
+      'Contribution score computed from an append-only activity log (effort share, on-time rate, activity)',
+      'Invite-by-email onboarding with hashed, expiring tokens and leader / member / supervisor roles enforced in Laravel policies',
+      'In-app notifications with live polling, sound and pop-ups; daily "due tomorrow" reminders via the scheduler',
+      'Free-plan limits (3 projects, 5 members) enforced server-side, ready for a paid tier',
+      'Backed by 37 Laravel feature tests covering auth, invitations, permissions, tasks and notifications',
+    ],
+    images: [
+      '/projects/squadboard-3-board.jpg',
+      '/projects/squadboard-5-report.jpg',
+      '/projects/squadboard-2-dashboard.jpg',
+      '/projects/squadboard-4-task.jpg',
+      '/projects/squadboard-6-notifications.jpg',
+      '/projects/squadboard-1-home.jpg',
+    ],
+    links: { code: 'https://github.com/JavariaMuqdas/SquadBoard', live: null },
   },
   {
     id: 'trustlocal',

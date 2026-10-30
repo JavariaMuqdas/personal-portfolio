@@ -27,7 +27,7 @@ export default function ProjectCard({ project, delay = 0 }) {
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/10 to-transparent" />
 
         {/* status badge */}
-        <div className="absolute left-3 top-3">
+        {/* <div className="absolute left-3 top-3">
           {isShipped ? (
             <span className="inline-flex items-center gap-1.5 rounded-full bg-bg/80 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-pink-400 backdrop-blur">
               <CheckCircle2 size={11} /> Shipped
@@ -37,7 +37,7 @@ export default function ProjectCard({ project, delay = 0 }) {
               <Clock size={11} /> In development
             </span>
           )}
-        </div>
+        </div> */}
 
         {/* title overlaid on image */}
         <div className="absolute inset-x-0 bottom-0 p-4">
