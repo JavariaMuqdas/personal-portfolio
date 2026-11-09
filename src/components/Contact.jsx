@@ -44,7 +44,7 @@ export default function Contact() {
         </div>
 
         <a
-          href="./Javaria Resume.pdf"
+          href="./JavariaMuqads_Resume.pdf"
           target="_blank" rel="noopener noreferrer"
           className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-ink hover:underline"
         >
