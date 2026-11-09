@@ -29,15 +29,15 @@ function SkillCard({ group, delay }) {
   return (
     <div
       ref={ref}
-      className="reveal rounded-2xl border border-line bg-surface p-6 transition-colors duration-300 hover:border-lineStrong"
-      style={{ transitionDelay: `${delay}ms` }}
+      className="reveal card-hover rounded-2xl border border-line bg-surface p-6"
+      style={{ animationDelay: `${delay}ms` }}
     >
       <h3 className="font-display text-base font-semibold text-ink">{group.title}</h3>
       <div className="mt-4 flex flex-wrap gap-2">
         {group.items.map((item) => (
           <span
             key={item}
-            className="rounded-full border border-line bg-raised px-3 py-1.5 text-xs font-medium text-muted"
+            className="rounded-full border border-line bg-raised px-3 py-1.5 text-xs font-medium text-muted transition duration-300 hover:-translate-y-0.5 hover:border-rose-700/60 hover:bg-rose-700/10 hover:text-ink"
           >
             {item}
           </span>

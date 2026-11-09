@@ -64,7 +64,7 @@ export const projects = [
       '/projects/squadboard-6-notifications.jpg',
       '/projects/squadboard-1-home.jpg',
     ],
-    links: { code: 'https://github.com/JavariaMuqdas/SquadBoard', live: null },
+    links: { code: 'https://github.com/JavariaMuqdas/SquadBoard', live: 'https://squad-board-one.vercel.app' },
   },
   {
     id: 'trustlocal',

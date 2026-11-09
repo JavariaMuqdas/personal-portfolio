@@ -63,8 +63,8 @@ function AboutCard({ point, delay }) {
   return (
     <div
       ref={ref}
-      className="reveal rounded-2xl border border-line bg-surface p-6 transition-colors duration-300 hover:border-lineStrong hover:bg-surfaceHover"
-      style={{ transitionDelay: `${delay}ms` }}
+      className="reveal card-hover rounded-2xl border border-line bg-surface p-6 hover:bg-surfaceHover"
+      style={{ animationDelay: `${delay}ms` }}
     >
       <h3 className="font-display text-lg font-semibold text-ink">{point.title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-muted">{point.body}</p>

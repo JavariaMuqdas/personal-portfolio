@@ -23,21 +23,21 @@ export default function Contact() {
           <a
             href="mailto:javaria.muqadas1@gmail.com"
 
-            className="rounded-full bg-rose-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-rose-800"
+            className="btn-shine rounded-full bg-rose-700 px-6 py-3 text-sm font-semibold text-white hover:bg-rose-800"
           >
             Email me
           </a>
           <a
             href="https://github.com/JavariaMuqdas"
             target="_blank" rel="noopener noreferrer"
-            className="rounded-full border border-line px-6 py-3 text-sm font-semibold text-ink transition hover:bg-surfaceHover"
+            className="rounded-full border border-line px-6 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-rose-700/60 hover:bg-surfaceHover"
           >
             GitHub
           </a>
           <a
             href="https://www.linkedin.com/in/javaria-muqadas"
             target="_blank" rel="noopener noreferrer"
-            className="rounded-full border border-line px-6 py-3 text-sm font-semibold text-ink transition hover:bg-surfaceHover"
+            className="rounded-full border border-line px-6 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-rose-700/60 hover:bg-surfaceHover"
           >
             LinkedIn
           </a>

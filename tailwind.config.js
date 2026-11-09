@@ -11,12 +11,12 @@ export default {
         line: 'rgba(255,255,255,0.08)',
         lineStrong: 'rgba(255,255,255,0.14)',
         ink: '#F3F5F8',
-        muted: '#8B93A7',
-        faint: '#5B6478',
-        coral: '#FF6B57',
-        coralDark: '#E8503C',
-        mint: '#34D399',
-        mintDark: '#22B37D',
+        muted: '#C3C9D6',
+        faint: '#959DB0',
+        coral: '#BE123C',
+        coralDark: '#9F1239',
+        mint: '#BE123C',
+        mintDark: '#9F1239',
       },
       fontFamily: {
         display: ['"Fraunces"', 'serif'],
@@ -28,8 +28,8 @@ export default {
       },
       boxShadow: {
         pin: '0 18px 44px -20px rgba(0, 0, 0, 0.55)',
-        pinHover: '0 26px 60px -18px rgba(255, 107, 87, 0.28)',
-        glow: '0 0 0 1px rgba(52, 211, 153, 0.25), 0 18px 44px -20px rgba(52, 211, 153, 0.2)',
+        pinHover: '0 26px 60px -18px rgba(190, 18, 60, 0.35)',
+        glow: '0 0 0 1px rgba(190, 18, 60, 0.3), 0 18px 44px -20px rgba(190, 18, 60, 0.25)',
       },
       keyframes: {
         fadeUp: {

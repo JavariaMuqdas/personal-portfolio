@@ -19,8 +19,7 @@ const pins = pinLayout.map((layout, i) => {
 });
 
 export default function Hero() {
-  const textRef = useReveal();
-  const artRef = useReveal();
+    const artRef = useReveal();
 
   return (
     <section
@@ -32,15 +31,18 @@ export default function Hero() {
         backgroundSize: "22px 22px",
       }}
     >
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
-        <div ref={textRef} className="reveal">
+      <div className="blob -left-24 top-10 h-72 w-72 bg-rose-700/25" />
+      <div className="blob -right-20 bottom-0 h-80 w-80 bg-rose-700/15" style={{ animationDelay: "-7s" }} />
+
+      <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="stagger">
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-1.5 font-mono text-xs uppercase tracking-wider text-rose-700">
             React JS · Laravel · MySQL
           </p>
 
           <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
             Building{" "}
-            <span className="italic text-rose-700">
+            <span className="text-shimmer italic">
               {" "}
               modern web applications{" "}
             </span>{" "}
@@ -55,13 +57,13 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#work"
-              className="rounded-full bg-rose-700 px-6 py-3 text-sm font-semibold text-white shadow-pin transition hover:bg-rose-600"
+              className="btn-shine rounded-full bg-rose-700 px-6 py-3 text-sm font-semibold text-white shadow-pin hover:bg-rose-800"
             >
               See the work
             </a>
             <a
               href="#contact"
-              className="rounded-full border border-line bg-surface px-6 py-3 text-sm font-semibold text-ink transition hover:bg-surfaceHover"
+              className="rounded-full border border-line bg-surface px-6 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-rose-700/60 hover:bg-surfaceHover"
             >
               Hire me as a freelancer
             </a>
@@ -101,11 +103,11 @@ export default function Hero() {
           className="reveal relative mx-auto h-[420px] w-full max-w-md lg:h-[460px]"
         >
           <div className="absolute inset-0 rounded-pin border border-line bg-surface/60"></div>
-          {pins.map((pin) => (
+          {pins.map((pin, i) => (
             <div
               key={pin.title}
-              className={`absolute overflow-hidden ${pin.size} ${pin.rotate} rounded-2xl border border-line bg-surface shadow-pin transition duration-300 hover:-translate-y-1 hover:rotate-0 hover:shadow-pinHover`}
-              style={{ top: pin.top, left: pin.left }}
+              className={`float absolute overflow-hidden ${pin.size} ${pin.rotate} rounded-2xl border border-line bg-surface shadow-pin transition duration-500 hover:z-10 hover:rotate-0 hover:scale-110 hover:border-rose-700/60 hover:shadow-pinHover`}
+              style={{ top: pin.top, left: pin.left, animationDelay: `${i * -1.5}s` }}
             >
               {pin.image ? (
                 <>
@@ -125,7 +127,7 @@ export default function Hero() {
                 </>
               ) : (
                 <div className="flex h-full flex-col justify-between p-4">
-                  <span className="h-2.5 w-2.5 rounded-full bg-bloodRed"></span>
+                  <span className="h-2.5 w-2.5 rounded-full bg-rose-700"></span>
                   <div>
                     <p className="font-display text-sm font-semibold leading-tight text-ink">
                       {pin.title}

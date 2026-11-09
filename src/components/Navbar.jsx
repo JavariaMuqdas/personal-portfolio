@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const links = [
   { label: 'Work', href: '#work' },
@@ -10,9 +10,30 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const [progress, setProgress] = useState(0)
+
+  // Scroll progress (0–1) drives the rose bar along the top of the page
+  useEffect(() => {
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      setProgress(max > 0 ? window.scrollY / max : 0)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+  }, [])
 
   return (
-    <header className="sticky top-4 z-50 px-4 sm:px-6">
+    <>
+    <div
+      className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-rose-700 shadow-[0_0_10px_rgba(190,18,60,0.7)]"
+      style={{ transform: `scaleX(${progress})` }}
+    />
+    <header className="sticky top-4 z-50 animate-fadeUp px-4 sm:px-6">
       <nav className="mx-auto flex max-w-5xl items-center justify-between rounded-pin border border-line bg-bg/80 px-5 py-3 shadow-pin backdrop-blur-md">
         <a href="#top" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-ink">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-rose-700 to-rose-700 text-sm font-bold text-white">
@@ -26,7 +47,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-muted transition hover:bg-surfaceHover hover:text-ink"
+              className="relative rounded-full px-4 py-2 text-sm font-medium text-muted transition after:absolute after:inset-x-4 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-rose-700 after:transition-transform after:duration-300 hover:bg-surfaceHover hover:text-ink hover:after:scale-x-100"
             >
               {link.label}
             </a>
@@ -36,7 +57,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <a
             href="#contact"
-            className="rounded-full bg-rose-700 px-5 py-2 text-sm font-semibold text-white  hover:bg-rose-800"
+            className="btn-shine inline-block rounded-full bg-rose-700 px-5 py-2 text-sm font-semibold text-white hover:bg-rose-800"
           >
             Let's talk
           </a>
@@ -80,5 +101,6 @@ export default function Navbar() {
         </div>
       )}
     </header>
+    </>
   )
 }
