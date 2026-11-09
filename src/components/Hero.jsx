@@ -48,7 +48,7 @@ export default function Hero() {
             </span>{" "}
             from frontend to backend.
           </h1>
-          <p className="mt-6 max-w-lg text-sm leading-relaxed text-muted">
+          <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
             I design and build full-stack applications — React interfaces on top
             of Laravel and MySQL backends — with a focus on clean structure and
             products that actually run in production.
@@ -65,33 +65,33 @@ export default function Hero() {
               href="#contact"
               className="rounded-full border border-line bg-surface px-6 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-rose-700/60 hover:bg-surfaceHover"
             >
-              Hire me as a freelancer
+              Let's work together
             </a>
           </div>
 
           <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-line pt-8">
             <div>
               <dt className="font-display text-3xl font-semibold text-ink">
-                5
+                6
               </dt>
               <dd className="mt-1 text-xs uppercase tracking-wide text-faint">
-                Products shipped
+                Projects built
               </dd>
             </div>
             <div>
               <dt className="font-display text-3xl font-semibold text-ink">
-                2
+                1
               </dt>
               <dd className="mt-1 text-xs uppercase tracking-wide text-faint">
-                Core stacks
+                Live SaaS
               </dd>
             </div>
             <div>
               <dt className="font-display text-3xl font-semibold text-ink">
-                100%
+                37
               </dt>
               <dd className="mt-1 text-xs uppercase tracking-wide text-faint">
-                Built from scratch
+                Feature tests
               </dd>
             </div>
           </dl>

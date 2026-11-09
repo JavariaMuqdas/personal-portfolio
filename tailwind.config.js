@@ -13,10 +13,6 @@ export default {
         ink: '#F3F5F8',
         muted: '#C3C9D6',
         faint: '#959DB0',
-        coral: '#BE123C',
-        coralDark: '#9F1239',
-        mint: '#BE123C',
-        mintDark: '#9F1239',
       },
       fontFamily: {
         display: ['"Fraunces"', 'serif'],

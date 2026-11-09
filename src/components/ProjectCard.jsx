@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import { ChevronDown, Github, ExternalLink, Clock, CheckCircle2 } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
+import { ChevronDown, Github, ExternalLink, X } from 'lucide-react'
 import { useReveal } from '../hooks/useReveal.js'
 
 export default function ProjectCard({ project, delay = 0 }) {
   const [open, setOpen] = useState(false)
+  const [preview, setPreview] = useState(null)
   const ref = useReveal()
   const [cover, ...rest] = project.images || []
-  const isShipped = project.status === 'shipped'
   const visibleStack = open ? project.stack : project.stack.slice(0, 4)
   const hiddenStack = open ? [] : project.stack.slice(4)
 
@@ -29,18 +30,6 @@ export default function ProjectCard({ project, delay = 0 }) {
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/30 to-transparent" />
         <div className="absolute inset-0 bg-rose-700/0 transition-colors duration-500 group-hover:bg-rose-700/10" />
 
-        {/* status badge */}
-        {/* <div className="absolute left-3 top-3">
-          {isShipped ? (
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-bg/80 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-rose-700 backdrop-blur">
-              <CheckCircle2 size={11} /> Shipped
-            </span>
-          ) : (
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-bg/80 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-rose-700 backdrop-blur">
-              <Clock size={11} /> In development
-            </span>
-          )}
-        </div> */}
 
         {/* title overlaid on image */}
         <div className="absolute inset-x-0 bottom-0 p-4">
@@ -109,13 +98,21 @@ export default function ProjectCard({ project, delay = 0 }) {
                 <div className="mt-4">
                   <p className="mb-2 font-mono text-[10px] uppercase tracking-wide text-faint">More screens</p>
                   <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
-                    {rest.map((src) => (
-                      <div
+                    {rest.map((src, i) => (
+                      <button
                         key={src}
-                        className="aspect-video overflow-hidden rounded-lg border border-line bg-raised"
+                        type="button"
+                        onClick={() => setPreview(src)}
+                        aria-label={`Enlarge ${project.title} screenshot ${i + 2}`}
+                        className="aspect-video overflow-hidden rounded-lg border border-line bg-raised transition hover:border-rose-700/60"
                       >
-                        <img src={src} alt="" className="h-full w-full object-cover object-top" />
-                      </div>
+                        <img
+                          src={src}
+                          alt={`${project.title} screenshot ${i + 2}`}
+                          loading="lazy"
+                          className="h-full w-full object-cover object-top transition duration-300 hover:scale-105"
+                        />
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -143,7 +140,7 @@ export default function ProjectCard({ project, delay = 0 }) {
                   </a>
                 ) : (
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2 text-xs font-semibold text-faint">
-                    {isShipped ? 'Repo private' : 'Not public yet'}
+                    {project.status === 'in-development' ? 'Not public yet' : 'Repo private'}
                   </span>
                 )}
               </div>
@@ -151,6 +148,50 @@ export default function ProjectCard({ project, delay = 0 }) {
           </div>
         </div>
       </div>
+
+      {preview && <Lightbox src={preview} title={project.title} onClose={() => setPreview(null)} />}
     </article>
+  )
+}
+
+function Lightbox({ src, title, onClose }) {
+  // Close on Escape and lock page scroll while the preview is open
+  useEffect(() => {
+    const onKey = (e) => e.key === 'Escape' && onClose()
+    document.addEventListener('keydown', onKey)
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = prevOverflow
+    }
+  }, [onClose])
+
+  // Portal to <body> so the card's hover transform can't trap the fixed overlay
+  return createPortal(
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${title} screenshot`}
+      onClick={onClose}
+      className="fixed inset-0 z-[70] flex animate-fadeUp items-center justify-center bg-bg/90 p-4 backdrop-blur-sm"
+    >
+      <button
+        type="button"
+        onClick={onClose}
+        autoFocus
+        aria-label="Close preview"
+        className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-line bg-surface text-ink hover:border-rose-700/60"
+      >
+        <X size={18} />
+      </button>
+      <img
+        src={src}
+        alt={`${title} screenshot`}
+        onClick={(e) => e.stopPropagation()}
+        className="max-h-[85vh] max-w-full rounded-xl border border-line object-contain shadow-pin"
+      />
+    </div>,
+    document.body,
   )
 }

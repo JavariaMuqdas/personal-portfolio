@@ -1,4 +1,4 @@
-import { projects,skillGroups } from '../components/data/projects.js'
+import { skillGroups } from '../components/data/projects.js'
 import { useReveal } from '../hooks/useReveal.js'
 
 export default function Skills() {

@@ -9,7 +9,7 @@ export default function Contact() {
         ref={ref}
         className="reveal mx-auto max-w-3xl rounded-pin border border-line bg-surface px-6 py-16 text-center shadow-pin sm:px-12"
       >
-        <p className="font-mono text-xs uppercase tracking-wider text-rose-700">Open to opportunities</p>
+        <p className="font-mono text-xs uppercase tracking-wider text-rose-700">Open to roles &amp; freelance</p>
         <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
           Let's build something that actually ships.
         </h2>
@@ -22,7 +22,6 @@ export default function Contact() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
             href="mailto:javaria.muqadas1@gmail.com"
-
             className="btn-shine rounded-full bg-rose-700 px-6 py-3 text-sm font-semibold text-white hover:bg-rose-800"
           >
             Email me
@@ -44,7 +43,7 @@ export default function Contact() {
         </div>
 
         <a
-          href="./JavariaMuqads_Resume.pdf"
+          href="./JavariaMuqadas_Resume.pdf"
           target="_blank" rel="noopener noreferrer"
           className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-ink hover:underline"
         >

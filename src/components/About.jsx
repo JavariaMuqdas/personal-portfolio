@@ -11,7 +11,7 @@ const points = [
   },
   {
     title: 'I ship working products',
-    body: 'Deployed, database-backed, and usable — not a prototype that only runs on localhost.',
+    body: 'Database-backed, tested, and usable end to end — SquadBoard is live on Vercel with 37 feature tests behind it.',
   },
   {
     title: 'I sweat the details',

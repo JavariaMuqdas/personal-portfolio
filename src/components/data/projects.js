@@ -67,7 +67,7 @@ export const projects = [
     links: { code: 'https://github.com/JavariaMuqdas/SquadBoard', live: 'https://squad-board-one.vercel.app' },
   },
   {
-    id: 'trustlocal',
+    id: 'sahih',
     tag: 'In Development',
     title: 'Sahih',
     status: 'in-development',
@@ -76,7 +76,7 @@ export const projects = [
       'A local services marketplace where reputation is computed from verifiable behavior — completions, response time, disputes — not self-reported reviews.',
     description: [
       'Local service marketplaces share the same three failures: reviews are easy to fake, providers face no real accountability after a booking, and payment happens outside any protected flow — so disputes have nowhere to go.',
-      'TrustLocal replaces the star rating with a Trust Score computed entirely from system-logged events: completion rate, response time, on-time rate, dispute outcomes, and repeat-customer rate — each weighted, then shown as a Bronze–Platinum tier rather than a raw number that invites nitpicking.',
+      'Sahih replaces the star rating with a Trust Score computed entirely from system-logged events: completion rate, response time, on-time rate, dispute outcomes, and repeat-customer rate — each weighted, then shown as a Bronze–Platinum tier rather than a raw number that invites nitpicking.',
       'Payments run through Stripe Connect with an escrow-style hold: funds are authorized on acceptance, released on confirmed completion, and frozen automatically if either side opens a dispute — so both customer and provider are actually protected, not just promised protection.',
     ],
     stack: ['Laravel', 'React', 'MySQL', 'Stripe Connect', 'Laravel Reverb', 'Redis'],
@@ -105,16 +105,16 @@ export const projects = [
     highlights: [
       'Full product catalog with categories, pricing, and stock status',
       'Cart and checkout flow backed by a relational order schema',
-      'Deployed to shared hosting to practice a real production handoff',
+      'Built for shared-hosting deployment (InfinityFree) to practice a production handoff',
     ],
     images: ['/projects/vendo-1-home.jpg', '/projects/vendo-2-product.jpg'],
     links: { code: 'https://github.com/JavariaMuqdas/vendo_website', live: null },
   },
   {
     id: 'passx',
-    tag: 'Practice Project',
+    tag: 'Redesign Concept',
     title: 'PassX',
-    status: 'shipped',
+    status: 'concept',
     tagline: 'A credential vault, redesigned.',
     blurb:
       'A password manager built to practice secure CRUD against a relational database — shown here as a redesign concept with a cleaner, modern interface.',
@@ -150,26 +150,26 @@ export const projects = [
       'Fully responsive across mobile, tablet, and desktop',
     ],
     images: [
-      '/projects/portfolio-1-hero.jpg',
-      '/projects/portfolio-2-work.jpg',
-      '/projects/portfolio-3-skills.jpg',
+      '/projects/portfolio-1-hero.png',
+      '/projects/portfolio-2-work.png',
+      '/projects/portfolio-3-skills.png',
     ],
-    links: { code: 'https://github.com/JavariaMuqdas/portfolio',  },
+    links: { code: 'https://github.com/JavariaMuqdas/personal-portfolio', live: null },
   },
 ]
 
 export const skillGroups = [
   {
     title: 'Languages & Core',
-    items: ['JavaScript', 'PHP', 'HTML5', 'CSS3', 'SQL'],
+    items: ['JavaScript', 'PHP', 'SQL', 'HTML5', 'CSS3'],
   },
   {
     title: 'Frontend',
-    items: ['React JS', 'Tailwind CSS', 'Responsive Design'],
+    items: ['React JS', 'Tailwind CSS', 'Framer Motion', 'dnd-kit', 'Responsive Design'],
   },
   {
     title: 'Backend',
-    items: ['Laravel', 'REST APIs', 'Authentication', 'MVC Architecture'],
+    items: ['Laravel', 'REST APIs', 'Sanctum Auth', 'Stripe Connect', 'Redis', 'MVC Architecture'],
   },
   {
     title: 'Database',
@@ -177,7 +177,7 @@ export const skillGroups = [
   },
   {
     title: 'Tools & Environment',
-    items: ['GitHub', 'VS Code', 'Postman', 'InfinityFree / Hosting'],
+    items: ['Git & GitHub', 'PHPUnit Feature Tests', 'Postman', 'Vercel', 'Shared Hosting', 'VS Code'],
   },
 ]
 
@@ -199,12 +199,12 @@ export const journey = [
   },
   {
     stage: 'Shipping',
-    title: 'Deployed real projects',
-    body: 'Took Skill Hive and Vendo from local development to database-backed, production-shaped applications.',
+    title: 'Shipped a live product',
+    body: 'Launched SquadBoard on Vercel — a tested, database-backed SaaS — after building Skill Hive and Vendo as complete full-stack systems.',
   },
   {
     stage: 'Now',
-    title: 'Designing TrustLocal, looking for my first role',
-    body: "Graduating in 2026, currently building a marketplace with a real trust-scoring engine, and ready to bring a full-stack mindset to a team building real products.",
+    title: 'Building Sahih, open to roles and freelance work',
+    body: 'BSCS class of 2026, currently building a marketplace with a real trust-scoring engine, and ready to bring a full-stack mindset to a team or a client project.',
   },
 ]

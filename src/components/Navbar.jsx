@@ -36,7 +36,7 @@ export default function Navbar() {
     <header className="sticky top-4 z-50 animate-fadeUp px-4 sm:px-6">
       <nav className="mx-auto flex max-w-5xl items-center justify-between rounded-pin border border-line bg-bg/80 px-5 py-3 shadow-pin backdrop-blur-md">
         <a href="#top" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-ink">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-rose-700 to-rose-700 text-sm font-bold text-white">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-rose-700 text-sm font-bold text-white">
             JM
           </span>
           Javaria
